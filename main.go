@@ -87,10 +87,10 @@ menu:
 				hargaMotor = 36741000
 				fmt.Print("Anda membeli Honda CBR 150R ", hargaMotor, " Rupiah")
 			}
-			fmt.Printf("\nTotal pembayaran : Rp.%.2d", hargaMotor)
 		} else {
 			fmt.Println("Anda salah memasukkan inputan!")
 		}
+		fmt.Printf("\nTotal pembayaran : Rp.%.2d", hargaMotor, " Rupiah")
 		fmt.Print("\nApakah Anda ingin belanja lagi ? (Y/N)")
 		fmt.Scan(&pilih)
 		if pilih == "Y" || pilih == "y" {
@@ -105,21 +105,20 @@ menu:
 		fmt.Scan(&Sparepart)
 		if Sparepart == "1" {
 			hargaSparepart = 335000
-			fmt.Printf("Anda membeli Aki dengan harga Rp.", hargaSparepart, " rupiah")
+			fmt.Print("Anda membeli Aki dengan harga Rp.", hargaSparepart, " rupiah")
 		} else if Sparepart == "2" {
 			hargaSparepart = 150000
-			fmt.Printf("Anda membeli gear set dengan harga Rp.", hargaSparepart, " rupiah")
+			fmt.Print("Anda membeli gear set dengan harga Rp.", hargaSparepart, " rupiah")
 		} else if Sparepart == "3" {
 			hargaSparepart = 1200000
-			fmt.Printf("Anda membeli Shock Breaker dengan harga Rp.", hargaSparepart, " rupiah")
+			fmt.Print("Anda membeli Shock Breaker dengan harga Rp.", hargaSparepart, " rupiah")
 		} else if Sparepart == "4" {
 			hargaSparepart = 315000
-			fmt.Printf("Anda membeli Piston Kit dengan harga Rp.", hargaSparepart, " rupiah")
-			fmt.Printf("\nTotal pembayaran : Rp.%.2d", hargaMotor)
+			fmt.Print("Anda membeli Piston Kit dengan harga Rp.", hargaSparepart, " rupiah")
 		} else {
-			fmt.Printf("Anda salah memasukkan inputan!")
+			fmt.Print("Anda salah memasukkan inputan!")
 		}
-
+		fmt.Print("\nTotal pembayaran : Rp.%.2d", hargaSparepart, " Rupiah")
 		fmt.Print("\nApakah Anda ingin belanja lagi ? (Y/N)")
 		fmt.Scan(&pilih)
 		if pilih == "Y" || pilih == "y" {
@@ -134,18 +133,18 @@ menu:
 		fmt.Scan(&Accessories)
 		if Accessories == "1" {
 			hargaAccessories = 71000
-			fmt.Printf("Anda membeli Protector dengan harga Rp.", hargaAccessories, " rupiah")
+			fmt.Print("Anda membeli Protector dengan harga Rp.", hargaAccessories, " rupiah")
 		} else if Accessories == "2" {
 			hargaAccessories = 51500
-			fmt.Printf("Anda membeli Visor dengan harga Rp.", hargaAccessories, " rupiah")
+			fmt.Print("Anda membeli Visor dengan harga Rp.", hargaAccessories, " rupiah")
 		} else if Accessories == "3" {
 			hargaAccessories = 133000
-			fmt.Printf("Anda membeli Garnish Headlight dengan harga Rp.", hargaAccessories, " rupiah")
+			fmt.Print("Anda membeli Garnish Headlight dengan harga Rp.", hargaAccessories, " rupiah")
 		} else if Accessories == "4" {
 			hargaAccessories = 121000
-			fmt.Printf("Anda membeli Smart Key Remote Cover dengan harga Rp.", hargaAccessories, " rupiah")
+			fmt.Print("Anda membeli Smart Key Remote Cover dengan harga Rp.", hargaAccessories, " rupiah")
 		}
-
+		fmt.Print("\nTotal pembayaran : Rp.%.2d", hargaAccessories, " Rupiah")
 		fmt.Print("\nApakah Anda ingin belanja lagi ? (Y/N)")
 		fmt.Scan(&pilih)
 		if pilih == "Y" || pilih == "y" {
