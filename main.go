@@ -90,7 +90,7 @@ menu:
 		} else {
 			fmt.Println("Anda salah memasukkan inputan!")
 		}
-		fmt.Printf("\nTotal pembayaran : Rp.%.2d", hargaMotor, " Rupiah")
+		fmt.Printf("\nTotal pembayaran : Rp.", hargaMotor, " Rupiah")
 		fmt.Print("\nApakah Anda ingin belanja lagi ? (Y/N)")
 		fmt.Scan(&pilih)
 		if pilih == "Y" || pilih == "y" {
@@ -118,7 +118,7 @@ menu:
 		} else {
 			fmt.Print("Anda salah memasukkan inputan!")
 		}
-		fmt.Print("\nTotal pembayaran : Rp.%.2d", hargaSparepart, " Rupiah")
+		fmt.Print("\nTotal pembayaran : Rp.", hargaSparepart, " Rupiah")
 		fmt.Print("\nApakah Anda ingin belanja lagi ? (Y/N)")
 		fmt.Scan(&pilih)
 		if pilih == "Y" || pilih == "y" {
@@ -144,7 +144,7 @@ menu:
 			hargaAccessories = 121000
 			fmt.Print("Anda membeli Smart Key Remote Cover dengan harga Rp.", hargaAccessories, " rupiah")
 		}
-		fmt.Print("\nTotal pembayaran : Rp.%.2d", hargaAccessories, " Rupiah")
+		fmt.Print("\nTotal pembayaran : Rp.", hargaAccessories, " Rupiah")
 		fmt.Print("\nApakah Anda ingin belanja lagi ? (Y/N)")
 		fmt.Scan(&pilih)
 		if pilih == "Y" || pilih == "y" {
