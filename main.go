@@ -90,7 +90,6 @@ menu:
 		} else {
 			fmt.Println("Anda salah memasukkan inputan!")
 		}
-		fmt.Printf("\nTotal pembayaran : Rp.", hargaMotor, " Rupiah")
 		fmt.Print("\nApakah Anda ingin belanja lagi ? (Y/N)")
 		fmt.Scan(&pilih)
 		if pilih == "Y" || pilih == "y" {
@@ -100,7 +99,7 @@ menu:
 		}
 
 	case "2":
-		fmt.Print("1.Aki.\n2.Gear Set.\n3.Shock Breaker.\n4.Piston Kit")
+		fmt.Print("1.Aki.\n2.Gear Set.\n3.Shock Breaker.\n4.Piston Kit\n")
 		fmt.Print("Silakan pilih motor anda : ")
 		fmt.Scan(&Sparepart)
 		if Sparepart == "1" {
@@ -128,7 +127,7 @@ menu:
 		}
 
 	case "3":
-		fmt.Print("1.Protector.\n2.Visor.\n3.Garnish Headlight.\n4.Smart Key Remote Cover")
+		fmt.Print("1.Protector.\n2.Visor.\n3.Garnish Headlight.\n4.Smart Key Remote Cover\n")
 		fmt.Print("Silakan pilih motor anda : ")
 		fmt.Scan(&Accessories)
 		if Accessories == "1" {
@@ -155,20 +154,34 @@ menu:
 
 	default:
 		fmt.Print("Pesanan yang anda pilih tidak ada dalam kategori.")
+		// totalBelanja = hargaAccessories + hargaMotor + hargaSparepart
+		break
 	}
-
+	
 struk:
 	// Struck Pembayaran
 	fmt.Print("\n\nStruk Pembayaran Honda Pondok Indah\n")
 	// fmt.Println("Order dengan atas nama", *&customer)
 	// fmt.Println("Pesanan akan di kirim ke ", *&address)
+	fmt.Println("----------------------------------------------------------------------------")
 	fmt.Println("Order dengan atas nama", customer.name)
 	fmt.Println("----------------------------------------------------------------------------")
 	fmt.Println("Pesanan akan di kirim ke ", customer.address)
+	fmt.Println("----------------------------------------------------------------------------")
+	fmt.Println("Total Motor: ", hargaMotor)
+	fmt.Println("Total Sparepart: ", hargaSparepart)
+	fmt.Println("Total Accessories: ", hargaAccessories)
+	fmt.Println("Total belanja ", hargaAccessories + hargaMotor + hargaSparepart)
 	fmt.Println("----------------------------------------------------------------------------")
 	fmt.Println("Pembayaran akan ditarik dari Kartu Kredit Nomor ", customer.kartuKredit)
 	fmt.Println("----------------------------------------------------------------------------")
 	// fmt.Println("Saldo Anda tersisa ", customer.saldo)
 	// fmt.Println("======================================")
-
+	fmt.Print("\nApakah Anda ingin belanja lagi ? (Y/N)")
+		fmt.Scan(&pilih)
+		if pilih == "Y" || pilih == "y" {
+			goto menu
+		} else {
+			fmt.Println("Terimakasih Sudah Berbelanja di Toko Honda Pondok Indah")
+		}
 }
