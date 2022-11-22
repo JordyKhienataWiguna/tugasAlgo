@@ -20,7 +20,7 @@ func main() {
 	// var customer, address,
 	var customer = cust{}
 	var input, pilih, motor, Sparepart, Accessories, motorBebek, motorMatic, motorSport string
-	var hargaMotor, hargaSparepart float32
+	var hargaMotor, hargaSparepart, hargaAccessories int
 
 	fmt.Print("=========== Selamat Datang di Toko Honda Pondok Indah ===========\n\n")
 	fmt.Print("Masukkan Nama Anda: ")
@@ -87,7 +87,7 @@ menu:
 				hargaMotor = 36741000
 				fmt.Print("Anda membeli Honda CBR 150R ", hargaMotor, " Rupiah")
 			}
-			fmt.Printf("Total pembayaran : Rp.%.2f", hargaMotor)
+			fmt.Printf("\nTotal pembayaran : Rp.%.2d", hargaMotor)
 		} else {
 			fmt.Println("Anda salah memasukkan inputan!")
 		}
@@ -115,6 +115,7 @@ menu:
 		} else if Sparepart == "4" {
 			hargaSparepart = 315000
 			fmt.Printf("Anda membeli Piston Kit dengan harga Rp.", hargaSparepart, " rupiah")
+			fmt.Printf("\nTotal pembayaran : Rp.%.2d", hargaMotor)
 		} else {
 			fmt.Printf("Anda salah memasukkan inputan!")
 		}
@@ -131,6 +132,19 @@ menu:
 		fmt.Print("1.Protector.\n2.Visor.\n3.Garnish Headlight.\n4.Smart Key Remote Cover")
 		fmt.Print("Silakan pilih motor anda : ")
 		fmt.Scan(&Accessories)
+		if Accessories == "1" {
+			hargaAccessories = 71000
+			fmt.Printf("Anda membeli Protector dengan harga Rp.", hargaAccessories, " rupiah")
+		} else if Accessories == "2" {
+			hargaAccessories = 51500
+			fmt.Printf("Anda membeli Visor dengan harga Rp.", hargaAccessories, " rupiah")
+		} else if Accessories == "3" {
+			hargaAccessories = 133000
+			fmt.Printf("Anda membeli Garnish Headlight dengan harga Rp.", hargaAccessories, " rupiah")
+		} else if Accessories == "4" {
+			hargaAccessories = 121000
+			fmt.Printf("Anda membeli Smart Key Remote Cover dengan harga Rp.", hargaAccessories, " rupiah")
+		}
 
 		fmt.Print("\nApakah Anda ingin belanja lagi ? (Y/N)")
 		fmt.Scan(&pilih)
