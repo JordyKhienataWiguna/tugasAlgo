@@ -19,7 +19,7 @@ type cust struct {
 func main() {
 	// var customer, address,
 	var customer = cust{}
-	var input, pilih, motor, Sparepart, Accessories, motorBebek, motorMatic, motorSport string
+	var input, pilih, kredit, cicilan, motor, Sparepart, Accessories, motorBebek, motorMatic, motorSport string
 	var hargaMotor, hargaSparepart, hargaAccessories int
 
 	fmt.Print("=========== Selamat Datang di Toko Honda Pondok Indah ===========\n\n")
@@ -95,7 +95,7 @@ menu:
 		if pilih == "Y" || pilih == "y" {
 			goto menu
 		} else {
-			goto struk
+			goto angsuran
 		}
 
 	case "2":
@@ -158,6 +158,31 @@ menu:
 		break
 	}
 
+
+	angsuran:
+	fmt.Print("\nApakah ingin melakukan kredit (Y/N) ? ")
+	fmt.Scan(&kredit)
+	if kredit == "Y" || kredit == "y" {
+		fmt.Print("Kamu harus membayar Dp sebesar Rp", hargaMotor, " Rupiah\n")
+		fmt.Print("Lama Angsuran yang ada : \n 12 Bulan\n 24 Bulan\n 36 Bulan\n Angsuran mana yang akan kamu pilih ?")
+		fmt.Scan(&cicilan)
+		if cicilan == "12" {
+			fmt.Print("Kamu membayar Rp ", hargaMotor/12," selama 12 bulan" )
+		} else if cicilan == "24" {
+			fmt.Print("Kamu membayar Rp ", hargaMotor/24," selama 24 bulan")
+		} else if cicilan == "36" {
+			fmt.Print("Kamu membayar Rp ", hargaMotor/36," selama 36 bulan")
+		}
+		fmt.Print("\nApakah Anda ingin belanja lagi ? (Y/N)")
+		fmt.Scan(&pilih)
+		if pilih == "Y" || pilih == "y" {
+			goto menu
+		} else {
+			goto struk
+		}
+		
+	}
+
 struk:
 	// Struck Pembayaran
 	fmt.Print("\n\nStruk Pembayaran Honda Pondok Indah\n")
@@ -168,7 +193,15 @@ struk:
 	fmt.Println("----------------------------------------------------------------------------")
 	fmt.Println("Pesanan akan di kirim ke ", customer.address)
 	fmt.Println("----------------------------------------------------------------------------")
-	fmt.Println("Total Motor: Rp.", hargaMotor)
+	if cicilan < "12" {
+		fmt.Println("Total Motor: Rp.", hargaMotor)
+	} else if cicilan == "12" {
+		fmt.Print("Total cicilan motor Rp ", hargaMotor/12," selama 12 bulan\n" )
+	} else if cicilan == "24" {
+		fmt.Print("Total cicilan motor Rp ", hargaMotor/24," selama 24 bulan\n")
+	} else if cicilan == "36" {
+		fmt.Print("Total cicilan motor Rp ", hargaMotor/36," selama 36 bulan\n")
+	}
 	fmt.Println("Total Sparepart: Rp.", hargaSparepart)
 	fmt.Println("Total Accessories: Rp.", hargaAccessories)
 	fmt.Println("Total belanja Rp.", hargaAccessories+hargaMotor+hargaSparepart)
