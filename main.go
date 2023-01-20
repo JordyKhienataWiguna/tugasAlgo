@@ -158,8 +158,7 @@ menu:
 		break
 	}
 
-
-	angsuran:
+angsuran:
 	fmt.Print("\nApakah ingin melakukan kredit (Y/N) ? ")
 	fmt.Scan(&kredit)
 	if kredit == "Y" || kredit == "y" {
@@ -167,11 +166,11 @@ menu:
 		fmt.Print("Lama Angsuran yang ada : \n 12 Bulan\n 24 Bulan\n 36 Bulan\n Angsuran mana yang akan kamu pilih ?")
 		fmt.Scan(&cicilan)
 		if cicilan == "12" {
-			fmt.Print("Kamu membayar Rp ", hargaMotor/12," selama 12 bulan" )
+			fmt.Print("Kamu membayar Rp ", hargaMotor/12, " selama 12 bulan")
 		} else if cicilan == "24" {
-			fmt.Print("Kamu membayar Rp ", hargaMotor/24," selama 24 bulan")
+			fmt.Print("Kamu membayar Rp ", hargaMotor/24, " selama 24 bulan")
 		} else if cicilan == "36" {
-			fmt.Print("Kamu membayar Rp ", hargaMotor/36," selama 36 bulan")
+			fmt.Print("Kamu membayar Rp ", hargaMotor/36, " selama 36 bulan")
 		}
 		fmt.Print("\nApakah Anda ingin belanja lagi ? (Y/N)")
 		fmt.Scan(&pilih)
@@ -180,7 +179,7 @@ menu:
 		} else {
 			goto struk
 		}
-		
+
 	}
 
 struk:
@@ -193,18 +192,24 @@ struk:
 	fmt.Println("----------------------------------------------------------------------------")
 	fmt.Println("Pesanan akan di kirim ke ", customer.address)
 	fmt.Println("----------------------------------------------------------------------------")
+	if hargaMotor != 0 && cicilan == "0" {
+		fmt.Println("Total Motor: Rp.", hargaMotor)
+	}
+	if hargaSparepart != 0 {
+		fmt.Println("Total Sparepart: Rp.", hargaSparepart)
+	}
+	if hargaAccessories != 0 {
+		fmt.Println("Total Accessories: Rp.", hargaAccessories)
+	}
 	if cicilan < "12" {
 		fmt.Println("Total Motor: Rp.", hargaMotor)
 	} else if cicilan == "12" {
-		fmt.Print("Total cicilan motor Rp ", hargaMotor/12," selama 12 bulan\n" )
+		fmt.Print("Total cicilan motor Rp ", hargaMotor/12, " selama 12 bulan\n")
 	} else if cicilan == "24" {
-		fmt.Print("Total cicilan motor Rp ", hargaMotor/24," selama 24 bulan\n")
+		fmt.Print("Total cicilan motor Rp ", hargaMotor/24, " selama 24 bulan\n")
 	} else if cicilan == "36" {
-		fmt.Print("Total cicilan motor Rp ", hargaMotor/36," selama 36 bulan\n")
+		fmt.Print("Total cicilan motor Rp ", hargaMotor/36, " selama 36 bulan\n")
 	}
-	fmt.Println("Total Sparepart: Rp.", hargaSparepart)
-	fmt.Println("Total Accessories: Rp.", hargaAccessories)
-	fmt.Println("Total belanja Rp.", hargaAccessories+hargaMotor+hargaSparepart)
 	fmt.Println("----------------------------------------------------------------------------")
 	fmt.Println("Pembayaran akan ditarik dari Kartu Kredit Nomor ", customer.kartuKredit)
 	fmt.Println("----------------------------------------------------------------------------")
